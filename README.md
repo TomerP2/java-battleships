@@ -44,10 +44,11 @@ The game flows like this:
 >
 > *Attributes*
 > ArrayList[ ArrayList[x, y] ] locationCoors
+> Integer health
 >
 > *Methods*
 > public void setLocation( ArrayList locationCoors )
-> public bool checkIfHit( ArrayList hitCell )
+> public bool checkIfHit( ArrayList chosenCell )
 > public bool CheckIfDead()
 
 > **UserInteractor**
@@ -70,6 +71,7 @@ game.play()
 - Create a new Board instance
 - Call generateBattleships
 - Ask user to pick a cell using UserInteractor.getInput()
+- Check if user already tried selected cell. If they have, display 'You already picked that cell!' and return to previous step. If they haven't, continue.
 - Increment tries integer.
 - For each battleship:
   - check if user hit battleship using Battleship.checkIfHit
