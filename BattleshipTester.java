@@ -19,8 +19,6 @@ public class BattleshipTester {
         // Initiate coordinate to function as the user's chosen coordinate.
         Coordinate chosenCoor = new Coordinate();
 
-        // Initiate result bool to store test results
-
         // Test 1: User missed ship.
         chosenCoor.setLocation("B1");
         Boolean result = ship.checkIfHit(chosenCoor);
