@@ -6,7 +6,7 @@ A little practice project to learn Java basics. Building the classic game 'Battl
 
 The game flows like this:
 
-1. The computer generates a 7x7 grid. The computer then generates three battleships with a width of 1 and a length of 1 to 4.
+1. The computer generates a 7x7 grid. The computer then generates three battleships with a width of 1 and a length of 2 to 4.
 
 2. The game starts, the user is asked to select a grid cell. The computer then finds out whether part of a battleship is on that cell.
     2.1. If it is not, the computer responds: 'miss'.
@@ -87,3 +87,24 @@ game.play()
 - If user killed all battleships:
   - show user prompt: 'victory'
   - show user prompt: 'took you x amount of tries'
+
+## ToDo
+
+- Change the way the x coordinate is stored. The input should still be 'A1' , 'C5', etc. But the UserInteractor should automatically translate this to a format where x and y are integers with values 0 to 6.
+- Finish work on the generateBattleships function. Pseudocode:
+  - Create battleships array
+  - Create occupiedCoordinates array
+  - For i in range (3):
+    - decide whether the ship is vertical or horizontal
+    - decide ship length
+    - try:
+      - Choose a random x and y from 0 to 6
+      - place the firstCoordinate there
+      - If horizontal, try to create n amount of cells to the right
+      - If vertial, try to create n amount of cells down
+      - If any of the cell creations fail, try a new random x and y
+    - If any of the new cells are already in occopiedCoordinates, try a new random x and y
+    - Create a new battleship with the created cells as location
+    - Add battleship to battleships array
+    - Add cells to occupiedCells arary
+  - return battleships array.
