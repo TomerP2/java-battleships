@@ -90,20 +90,6 @@ game.play()
 
 ## ToDo
 
-- Finish work on the generateBattleships function. Pseudocode:
-  - Create battleships array
-  - Create occupiedCoordinates array
-  - For i in range (3):
-    - decide whether the ship is vertical or horizontal
-    - decide ship length
-    - try:
-      - Choose a random x and y from 0 to 6
-      - place the firstCoordinate there
-      - If horizontal, try to create n amount of cells to the right
-      - If vertial, try to create n amount of cells down
-      - If any of the cell creations fail, try a new random x and y
-    - If any of the new cells are already in occopiedCoordinates, try a new random x and y
-    - Create a new battleship with the created cells as location
-    - Add battleship to battleships array
-    - Add cells to occupiedCells arary
-  - return battleships array.
+- Fix bug: A is now top and G is bottom. Switch around.
+- Fix bug: User can now hit same cell multiple times. Should not be allowed.
+- Fix bug: Line battleships.remove(ship) crashes game.
