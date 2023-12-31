@@ -90,7 +90,6 @@ game.play()
 
 ## ToDo
 
-- Change the way the x coordinate is stored. The input should still be 'A1' , 'C5', etc. But the UserInteractor should automatically translate this to a format where x and y are integers with values 0 to 6.
 - Finish work on the generateBattleships function. Pseudocode:
   - Create battleships array
   - Create occupiedCoordinates array
