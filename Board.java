@@ -29,42 +29,21 @@ public class Board {
 
         // For each coordinate in the hitCoordinates arraylist, change the associated grid cell to "+".
         for (Coordinate hitCoor : hitCoordinates){
-            String coorStr = hitCoor.getLocation();
-            Integer realX = letterToNumber(coorStr.charAt(0));
-            Integer realY = Integer.parseInt(coorStr.substring(1)) - 1;
-            grid.get(realX).set(realY, "+");
+            Integer[] coordinates = hitCoor.getLocation();
+            Integer x = coordinates[0];
+            Integer y = coordinates[1];
+            grid.get(x).set(y, "+");
         }
 
         // Do the same with the missCoordinates arraylist, but change the associated grid cell to "-".
         for (Coordinate missCoor : missCoordinates){
-            String coorStr = missCoor.getLocation();
-            Integer realX = letterToNumber(coorStr.charAt(0));
-            Integer realY = Integer.parseInt(coorStr.substring(1)) - 1;
-            grid.get(realX).set(realY, "-");
+            Integer[] coordinates = missCoor.getLocation();
+            Integer x = coordinates[0];
+            Integer y = coordinates[1];
+            grid.get(x).set(y, "-");
         }
 
         //Return the grid
         return grid;
-    }
-
-    private Integer letterToNumber(char letter){
-        switch (letter) {
-            case 'A':
-                return 0;
-            case 'B':
-                return 1;
-            case 'C':
-                return 2;
-            case 'D':
-                return 3;
-            case 'E':
-                return 4;
-            case 'F':
-                return 5;
-            case 'G':
-                return 6;
-            default:
-                return -1;
-        }
     }
 }

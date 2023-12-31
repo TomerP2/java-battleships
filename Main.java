@@ -25,7 +25,7 @@ public class Main {
                 Integer randomX = random.nextInt(7);
                 Integer randomY = random.nextInt(7);
                 Coordinate firstCoordinate = new Coordinate();
-                firstCoordinate.setLocation(String.valueOf(randomX) + String.valueOf(randomY));
+                firstCoordinate.setLocation(randomX, randomY);
             }
 
         }

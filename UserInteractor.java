@@ -29,4 +29,45 @@ public class UserInteractor {
         System.out.print(prompt + " ");
         return scanner.nextLine();
     }
+
+    public Coordinate getValidInputCoor(String prompt) {
+        while (true) {
+            try {
+                String inputstr = getInput(prompt);
+    
+                char xchar = inputstr.charAt(0);
+                char ychar = inputstr.charAt(1);
+    
+                int x = letterToNumber(xchar);
+                int y = Character.getNumericValue(ychar) - 1;
+    
+                Coordinate coor = new Coordinate();
+                coor.setLocation(x, y);
+                return coor;
+            } catch (IllegalArgumentException e) {
+                show("Invalid input. Try again!");
+            }
+        }
+    }
+
+    private Integer letterToNumber(char letter){
+        switch (letter) {
+            case 'A':
+                return 0;
+            case 'B':
+                return 1;
+            case 'C':
+                return 2;
+            case 'D':
+                return 3;
+            case 'E':
+                return 4;
+            case 'F':
+                return 5;
+            case 'G':
+                return 6;
+            default:
+                return -1;
+        }
+    }
 }

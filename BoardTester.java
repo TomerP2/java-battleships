@@ -27,7 +27,7 @@ public class BoardTester {
 
         // Test 2: Check if cells get marked correctly in grid
         Coordinate hitCoor = new Coordinate();
-        hitCoor.setLocation("A1");
+        hitCoor.setLocation(0, 0);
 
         board.setCoordinateTo(hitCoor, "hit");
         grid = board.getBoardAsGrid();
