@@ -3,11 +3,11 @@ public class Coordinate {
     Integer y;
 
     public void setLocation(Integer new_x, Integer new_y) {
-        if (x < 1 || x > 7){
+        if (new_x < 0 || new_x > 6){
             throw new IllegalArgumentException("Error: The x value '" + x + "' is not a valid value");
         }
         
-        if (y < 1 || y > 7){
+        if (new_y < 0 || new_y > 6){
             throw new IllegalArgumentException("Error: The y value '" + y + "' is not a valid value");
         }
 
@@ -30,6 +30,6 @@ public class Coordinate {
         }
 
         Coordinate otherCoordinate = (Coordinate) obj;
-        return x.equals(otherCoordinate.x) && y.equals(otherCoordinate.y);
+        return (x == otherCoordinate.x && y == otherCoordinate.y);
     }
 }
