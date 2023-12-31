@@ -7,7 +7,7 @@ public class BattleshipsGenerator {
         ArrayList<Coordinate> occupiedCoors = new ArrayList<Coordinate>();
         Random random = new Random();
 
-        for (int i = 0; i <= 3; i++){
+        for (int i = 0; i < 3; i++){
             boolean horizontal = random.nextInt(2) == 1;
             Integer length = random.nextInt(3) + 2;
             ArrayList<Coordinate> shipCoors = new ArrayList<Coordinate>(); 

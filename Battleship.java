@@ -8,6 +8,10 @@ public class Battleship {
         locationCoors = coors;
         health = locationCoors.size();
     };
+    
+    public ArrayList<Coordinate> getLocation(){
+        return locationCoors;
+    }
 
     public Boolean checkIfHit( Coordinate chosenCoor ){
         for (Coordinate coor: locationCoors) {

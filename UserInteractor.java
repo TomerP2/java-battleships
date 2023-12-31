@@ -34,8 +34,11 @@ public class UserInteractor {
         while (true) {
             try {
                 String inputstr = getInput(prompt);
+                if (inputstr.length() != 2) {
+                    throw new IllegalArgumentException("Invalid input format. Please enter two characters.");
+                }
     
-                char xchar = inputstr.charAt(0);
+                char xchar = Character.toUpperCase(inputstr.charAt(0));
                 char ychar = inputstr.charAt(1);
     
                 int x = letterToNumber(xchar);
