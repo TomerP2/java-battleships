@@ -1,3 +1,4 @@
+package data_structures;
 public class Coordinate {
     Integer x;
     Integer y;

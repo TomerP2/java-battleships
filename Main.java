@@ -1,5 +1,11 @@
 import java.util.ArrayList;
 
+import data_structures.Battleship;
+import data_structures.Board;
+import data_structures.Coordinate;
+import workers.BattleshipsGenerator;
+import workers.UserInteractor;
+
 public class Main {
     
     public static void main(String[] args) {

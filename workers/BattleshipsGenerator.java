@@ -1,5 +1,9 @@
+package workers;
 import java.util.ArrayList;
 import java.util.Random;
+
+import data_structures.Battleship;
+import data_structures.Coordinate;
 
 public class BattleshipsGenerator {
     public static ArrayList<Battleship> generate() {

@@ -1,4 +1,8 @@
+package tests;
 import java.util.ArrayList;
+
+import data_structures.Board;
+import data_structures.Coordinate;
 
 public class BoardTester {
     public static void main(String[] args) {

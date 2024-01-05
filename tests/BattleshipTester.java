@@ -1,4 +1,8 @@
+package tests;
 import java.util.ArrayList;
+
+import data_structures.Battleship;
+import data_structures.Coordinate;
 
 public class BattleshipTester {
     public static void main(String[] args) {

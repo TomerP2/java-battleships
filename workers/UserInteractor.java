@@ -1,5 +1,8 @@
+package workers;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import data_structures.Coordinate;
 
 public class UserInteractor {
     private Scanner scanner;

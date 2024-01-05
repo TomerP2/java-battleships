@@ -1,4 +1,11 @@
+package tests;
 import java.util.ArrayList;
+
+import data_structures.Battleship;
+import workers.BattleshipsGenerator;
+import data_structures.Board;
+import data_structures.Coordinate;
+import workers.UserInteractor;
 
 public class BattleshipsGeneratorTester {
     public static void main(String[] args) {
