@@ -59,12 +59,34 @@ public class BattleshipsGenerator {
             Battleship ship = new Battleship(shipCoors);
             battleships.add(ship);
 
-            // Add created coordinates to occupiedCoordinates array
-            for(Coordinate coor : shipCoors){
-                occupiedCoors.add(coor);
+            for(Coordinate shipCoor : shipCoors){
+                // Add created coordinates to occupiedCoordinates array.
+                occupiedCoors.add(shipCoor);
+                
+                // Also add coordinates horizontally, vertically or diagonally adjacent to shipCoordinate, to prevent adjacent placements.
+                Integer[] shipLocation = shipCoor.getLocation();
+                Integer x = shipLocation[0];
+                Integer y = shipLocation[1];
+
+                tryToAddCoordinateTo(occupiedCoors, x + 1, y); //Right
+                tryToAddCoordinateTo(occupiedCoors, x - 1, y); //Left
+                tryToAddCoordinateTo(occupiedCoors, x, y + 1); //Top
+                tryToAddCoordinateTo(occupiedCoors, x, y - 1); //Bottom
+                tryToAddCoordinateTo(occupiedCoors, x + 1, y + 1); //Top-right
+                tryToAddCoordinateTo(occupiedCoors, x + 1, y - 1); //Bottom-right
+                tryToAddCoordinateTo(occupiedCoors, x - 1, y + 1); //Top-left
+                tryToAddCoordinateTo(occupiedCoors, x - 1, y + 1); //Bottom-left
             }
         }
         return battleships;
+    }
+
+    private static void tryToAddCoordinateTo(ArrayList<Coordinate> list, Integer x, Integer y){
+        try{
+            list.add(new Coordinate(x, y));
+        } catch (IllegalArgumentException e) {
+            // Means the coordinate is outside the game area, skip it    
+        }
     }
 }
 
