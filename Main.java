@@ -27,6 +27,10 @@ public class Main {
             Boolean hit = false;
 
             for (Battleship ship : battleships){
+                if (hit) {
+                    continue;
+                }
+
                 hit = ship.checkIfHit(chosenCoor);
                 if (ship.checkIfDead()) {
                     interactor.show("You destroyed a ship!");
