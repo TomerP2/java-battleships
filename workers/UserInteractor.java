@@ -5,6 +5,8 @@ import java.util.Scanner;
 import data_structures.Coordinate;
 
 public class UserInteractor {
+    static final Scanner scanner = new Scanner(System.in);
+
     private UserInteractor() {
     }
 
@@ -15,7 +17,7 @@ public class UserInteractor {
     public static void showBoard(ArrayList<ArrayList<String>> grid) {
         String[] letters = {"A", "B", "C", "D", "E", "F", "G"};
 
-        show("-----------------------------");
+        show("  -----------------------------");
         String line = new String();
 
         for (int i = 0; i <= 6; i++){
@@ -29,7 +31,7 @@ public class UserInteractor {
             }
             
             show(line);
-            show("-----------------------------");
+            show("  -----------------------------");
         }
 
         line = "  | ";
@@ -42,11 +44,7 @@ public class UserInteractor {
 
     public static String getInput(String prompt) {
         System.out.print(prompt + " ");
-
-        try (Scanner scanner = new Scanner(System.in)) {
-            String input = scanner.nextLine();
-            return input;
-        }
+        return scanner.nextLine();
     }
 
     public static Coordinate getValidInputCoor(String prompt) {
