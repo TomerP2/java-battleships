@@ -45,7 +45,8 @@ public class UserInteractor {
                 char ychar = inputstr.charAt(1);
     
                 int x = letterToNumber(xchar);
-                int y = Character.getNumericValue(ychar) - 1;
+                // 'flip' the number so that input '1' is the bottom of the board, like in chess.
+                int y = 7 - Character.getNumericValue(ychar); 
     
                 Coordinate coor = new Coordinate();
                 coor.setLocation(x, y);
