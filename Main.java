@@ -13,7 +13,7 @@ public class Main {
         ArrayList<Battleship> battleships = BattleshipsGenerator.generate();
         Board board = new Board();
         Integer tries = 0;
-        Integer shipsAlive = 3;
+        Integer aliveShips = 3;
 
         UserInteractor.show("Welcome to battleships!");
         UserInteractor.show("The computer has generated three ships, sizes 2 to 4.");
@@ -34,9 +34,11 @@ public class Main {
                 }
 
                 hit = true;
+                ship.reduceHealth();
+
                 if (ship.checkIfDead()) {
                     UserInteractor.show("You destroyed a ship!");
-                    shipsAlive--;
+                    aliveShips--;
                     iterator.remove();
                 }
             }
@@ -49,7 +51,7 @@ public class Main {
                 UserInteractor.show("Miss.");
             }
 
-            if (shipsAlive == 0) {
+            if (aliveShips == 0) {
                 UserInteractor.show("Congratz! You win. Took you only " + tries + "shots." );
                 return;
             }

@@ -17,11 +17,14 @@ public class Battleship {
     public Boolean checkIfHit( Coordinate chosenCoor ){
         for (Coordinate coor: locationCoors) {
             if (coor.equals(chosenCoor)){
-                health--;
                 return true;
             };
         }
         return false;
+    }
+
+    public void reduceHealth(){
+        health--;
     }
 
     public Boolean checkIfDead(){
