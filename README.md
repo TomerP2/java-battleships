@@ -18,6 +18,5 @@ The game flows like this:
 ## ToDo
 
 - Fix bug: User can now hit same cell multiple times. Should not be allowed.
-- Create constructors for Coordinate and Battleship classes
 - In Board.java, combine the hitCoordinates and the missCoordinates arrays into 1 linked list (Coordinate: hit/miss)
-- Make it so ships cant be adjacent
+- Fix tests
