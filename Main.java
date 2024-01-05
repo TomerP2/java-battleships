@@ -19,7 +19,8 @@ public class Main {
         UserInteractor.show("The computer has generated three ships, sizes 2 to 4.");
         UserInteractor.show("It's your job to destroy them all!");
         UserInteractor.show("The board follows chess notations, so A1 is the bottom left cell and G7 is the top right cell.");
-        UserInteractor.show("Simply type in your chosen cell to shoot at it! Good luck!");
+        UserInteractor.show("Simply type in your chosen cell (like A1, C3 etc.) to shoot at it! Good luck!");
+        UserInteractor.showBoard(board.getBoardAsGrid());
 
         while (true){
             Coordinate chosenCoor = UserInteractor.getValidInputCoor("Choose a cell: ");
