@@ -18,7 +18,6 @@ The game flows like this:
 ## ToDo
 
 - Fix bug: User can now hit same cell multiple times. Should not be allowed.
-- Add numbers / letters to board so its easy to find correct cell.
 - Refactor workers to have static methods when appropriate
 - Create constructors for Coordinate and Battleship classes
 - In Board.java, combine the hitCoordinates and the missCoordinates arrays into 1 linked list (Coordinate: hit/miss)
