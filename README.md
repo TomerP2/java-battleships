@@ -18,8 +18,8 @@ The game flows like this:
 ## ToDo
 
 - Fix bug: User can now hit same cell multiple times. Should not be allowed.
-- Fix bug: Battleships dont seem to be working correctly.
-- Fix bug: Line battleships.remove(ship) crashes game.
+- Add numbers / letters to board so its easy to find correct cell.
 - Refactor workers to have static methods when appropriate
 - Create constructors for Coordinate and Battleship classes
 - In Board.java, combine the hitCoordinates and the missCoordinates arrays into 1 linked list (Coordinate: hit/miss)
+- Make it so ships cant be adjacent
