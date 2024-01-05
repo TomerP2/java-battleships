@@ -30,8 +30,7 @@ public class BoardTester {
         }
 
         // Test 2: Check if cells get marked correctly in grid
-        Coordinate hitCoor = new Coordinate();
-        hitCoor.setLocation(0, 0);
+        Coordinate hitCoor = new Coordinate(0, 0);
 
         board.setCoordinateTo(hitCoor, "hit");
         grid = board.getBoardAsGrid();

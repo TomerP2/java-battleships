@@ -11,23 +11,17 @@ public class BattleshipTester {
         // Create array of coordinates containing the ship's location.
         ArrayList<Coordinate> shipCoor = new ArrayList<Coordinate>();
 
-        Coordinate coor1 = new Coordinate();
-        coor1.setLocation(0, 0);
+        Coordinate coor1 = new Coordinate(0, 0);
         shipCoor.add(coor1);
         
-        Coordinate coor2 = new Coordinate();
-        coor2.setLocation(0, 1);
+        Coordinate coor2 = new Coordinate(0, 1);
         shipCoor.add(coor2);
         
         // Initiate ship and set location.
-        Battleship ship = new Battleship();
-        ship.setLocation(shipCoor);
-
-        // Initiate coordinate to function as the user's chosen coordinate.
-        Coordinate chosenCoor = new Coordinate();
-
+        Battleship ship = new Battleship(shipCoor);
+        
         // Test 1: User missed ship.
-        chosenCoor.setLocation(1, 0);
+        Coordinate chosenCoor = new Coordinate(1, 0);
         Boolean result = ship.checkIfHit(chosenCoor);
         if (result) {
             System.out.println("Test 1 failed.");
@@ -44,10 +38,11 @@ public class BattleshipTester {
         }
 
         // Test 3: User hits ship first time.
-        chosenCoor.setLocation(0, 0);
+        chosenCoor = new Coordinate(0, 0);
         result = ship.checkIfHit(chosenCoor);
         if (result) {
             System.err.println("Test 3 succeeded.");
+            ship.reduceHealth();
         } else {
             System.err.println("Test 3 failed.");
         }
@@ -61,10 +56,11 @@ public class BattleshipTester {
         }
 
         // Test 5: User hits ship second time. 
-        chosenCoor.setLocation(0, 1);
+        chosenCoor = new Coordinate(0, 1);
         result = ship.checkIfHit(chosenCoor);
         if (result) {
             System.err.println("Test 5 succeeded.");
+            ship.reduceHealth();
         } else {
             System.err.println("Test 5 failed.");
         }
