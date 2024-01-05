@@ -16,16 +16,31 @@ public class UserInteractor {
     }
 
     public void showBoard(ArrayList<ArrayList<String>> grid) {
+        String[] letters = {"A", "B", "C", "D", "E", "F", "G"};
+
         show("-----------------------------");
         String line = new String();
-        for (ArrayList<String> row : grid){
-            line = "| ";
+
+        for (int i = 0; i <= 6; i++){
+            // show each game row
+            ArrayList<String> row = grid.get(i);
+            int row_num = 7 - i;
+
+            line = row_num + " | ";
             for (String coor: row) {
                 line = line + coor + " | ";
             }
+            
             show(line);
             show("-----------------------------");
         }
+
+        line = "  | ";
+        for (String l : letters) {
+            // Show letters underneath gameboard
+            line = line + l + " | ";
+        }
+        show(line);
     }
 
     public String getInput(String prompt) {
