@@ -5,10 +5,10 @@ public class Battleship {
     private ArrayList<Coordinate> locationCoors;
     private Integer health;
 
-    public void setLocation(ArrayList<Coordinate> coors){
+    public Battleship(ArrayList<Coordinate> coors) {
         locationCoors = coors;
         health = locationCoors.size();
-    };
+    }
     
     public ArrayList<Coordinate> getLocation(){
         return locationCoors;

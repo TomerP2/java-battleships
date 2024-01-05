@@ -59,8 +59,7 @@ public class BattleshipsGenerator {
             }
 
             // Create a new ship and add to battleships array
-            Battleship ship = new Battleship();
-            ship.setLocation(shipCoors);
+            Battleship ship = new Battleship(shipCoors);
             battleships.add(ship);
 
             // Add created coordinates to occupiedCoordinates array
