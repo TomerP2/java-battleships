@@ -51,7 +51,7 @@ public class Main {
             }
 
             if (shipsAlive == 0) {
-                interactor.show("Congratz! You win.");
+                interactor.show("Congratz! You win. Took you only " + tries + "shots." );
                 return;
             }
 
