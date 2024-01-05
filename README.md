@@ -21,3 +21,5 @@ The game flows like this:
 - In Board.java, combine the hitCoordinates and the missCoordinates arrays into 1 linked list (Coordinate: hit/miss)
 - Fix tests
 - Make the game ask the player if they want to play again once game finishes.
+- Change icons once ship is destoryed
+- Let user choose board size, ship count, ship size('s).
