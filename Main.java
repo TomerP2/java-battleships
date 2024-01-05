@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import data_structures.Battleship;
 import data_structures.Board;
@@ -26,16 +27,18 @@ public class Main {
             tries++;
             Boolean hit = false;
 
-            for (Battleship ship : battleships){
-                if (hit) {
+            Iterator<Battleship> iterator = battleships.iterator();
+            while (iterator.hasNext()) {
+                Battleship ship = iterator.next();
+                if (!ship.checkIfHit(chosenCoor)) {
                     continue;
                 }
 
-                hit = ship.checkIfHit(chosenCoor);
+                hit = true;
                 if (ship.checkIfDead()) {
                     interactor.show("You destroyed a ship!");
                     shipsAlive--;
-                    battleships.remove(ship);
+                    iterator.remove();
                 }
             }
 
