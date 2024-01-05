@@ -93,3 +93,5 @@ game.play()
 - Fix bug: A is now top and G is bottom. Switch around.
 - Fix bug: User can now hit same cell multiple times. Should not be allowed.
 - Fix bug: Line battleships.remove(ship) crashes game.
+- Refactor workers to have static methods when appropriate
+- Create constructors for Coordinate and Battleship classes
