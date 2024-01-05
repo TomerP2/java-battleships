@@ -12,18 +12,17 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Battleship> battleships = BattleshipsGenerator.generate();
         Board board = new Board();
-        UserInteractor interactor = new UserInteractor();
         Integer tries = 0;
         Integer shipsAlive = 3;
 
-        interactor.show("Welcome to battleships!");
-        interactor.show("The computer has generated three ships, sizes 2 to 4.");
-        interactor.show("It's your job to destroy them all!");
-        interactor.show("The board follows chess notations, so A1 is the bottom left cell and G7 is the top right cell.");
-        interactor.show("Simply type in your chosen cell to shoot at it! Good luck!");
+        UserInteractor.show("Welcome to battleships!");
+        UserInteractor.show("The computer has generated three ships, sizes 2 to 4.");
+        UserInteractor.show("It's your job to destroy them all!");
+        UserInteractor.show("The board follows chess notations, so A1 is the bottom left cell and G7 is the top right cell.");
+        UserInteractor.show("Simply type in your chosen cell to shoot at it! Good luck!");
 
         while (true){
-            Coordinate chosenCoor = interactor.getValidInputCoor("Choose a cell: ");
+            Coordinate chosenCoor = UserInteractor.getValidInputCoor("Choose a cell: ");
             tries++;
             Boolean hit = false;
 
@@ -36,7 +35,7 @@ public class Main {
 
                 hit = true;
                 if (ship.checkIfDead()) {
-                    interactor.show("You destroyed a ship!");
+                    UserInteractor.show("You destroyed a ship!");
                     shipsAlive--;
                     iterator.remove();
                 }
@@ -44,18 +43,18 @@ public class Main {
 
             if (hit) {
                 board.setCoordinateTo(chosenCoor, "hit");
-                interactor.show("Hit!");
+                UserInteractor.show("Hit!");
             } else {
                 board.setCoordinateTo(chosenCoor, "miss");
-                interactor.show("Miss.");
+                UserInteractor.show("Miss.");
             }
 
             if (shipsAlive == 0) {
-                interactor.show("Congratz! You win. Took you only " + tries + "shots." );
+                UserInteractor.show("Congratz! You win. Took you only " + tries + "shots." );
                 return;
             }
 
-            interactor.showBoard(board.getBoardAsGrid());
+            UserInteractor.showBoard(board.getBoardAsGrid());
         }
     }
 }
