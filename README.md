@@ -20,3 +20,4 @@ The game flows like this:
 - Fix bug: User can now hit same cell multiple times. Should not be allowed.
 - In Board.java, combine the hitCoordinates and the missCoordinates arrays into 1 linked list (Coordinate: hit/miss)
 - Fix tests
+- Make the game ask the player if they want to play again once game finishes.
