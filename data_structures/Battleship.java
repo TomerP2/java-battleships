@@ -2,8 +2,8 @@ package data_structures;
 import java.util.ArrayList;
 
 public class Battleship {
-    ArrayList<Coordinate> locationCoors;
-    Integer health;
+    private ArrayList<Coordinate> locationCoors;
+    private Integer health;
 
     public void setLocation(ArrayList<Coordinate> coors){
         locationCoors = coors;
