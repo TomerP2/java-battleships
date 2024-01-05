@@ -5,17 +5,14 @@ import java.util.Scanner;
 import data_structures.Coordinate;
 
 public class UserInteractor {
-    private Scanner scanner;
-
-    public UserInteractor() {
-        this.scanner = new Scanner(System.in);
+    private UserInteractor() {
     }
 
-    public void show(String prompt) {
+    public static void show(String prompt) {
         System.out.println(prompt);
     }
 
-    public void showBoard(ArrayList<ArrayList<String>> grid) {
+    public static void showBoard(ArrayList<ArrayList<String>> grid) {
         String[] letters = {"A", "B", "C", "D", "E", "F", "G"};
 
         show("-----------------------------");
@@ -43,12 +40,16 @@ public class UserInteractor {
         show(line);
     }
 
-    public String getInput(String prompt) {
+    public static String getInput(String prompt) {
         System.out.print(prompt + " ");
-        return scanner.nextLine();
+
+        try (Scanner scanner = new Scanner(System.in)) {
+            String input = scanner.nextLine();
+            return input;
+        }
     }
 
-    public Coordinate getValidInputCoor(String prompt) {
+    public static Coordinate getValidInputCoor(String prompt) {
         while (true) {
             try {
                 String inputstr = getInput(prompt);
@@ -72,7 +73,7 @@ public class UserInteractor {
         }
     }
 
-    private Integer letterToNumber(char letter){
+    private static Integer letterToNumber(char letter){
         switch (letter) {
             case 'A':
                 return 0;
