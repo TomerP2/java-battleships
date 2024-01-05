@@ -64,8 +64,7 @@ public class UserInteractor {
                 // 'flip' the number so that input '1' is the bottom of the board, like in chess.
                 int y = 7 - Character.getNumericValue(ychar); 
     
-                Coordinate coor = new Coordinate();
-                coor.setLocation(x, y);
+                Coordinate coor = new Coordinate(x ,y);
                 return coor;
             } catch (IllegalArgumentException e) {
                 show("Invalid input. Try again!");

@@ -24,22 +24,19 @@ public class BattleshipsGenerator {
                 // Create first coordinate. This is the startpoint of the ship's coordinates
                 Integer x = random.nextInt(7);
                 Integer y = random.nextInt(7);
-                Coordinate firstCoor = new Coordinate();
-                firstCoor.setLocation(x, y);
-
+                Coordinate firstCoor = new Coordinate(x, y);
                 shipCoors.add(firstCoor);
 
                 // Loop through 'length' times. Try to create cells above or to the right of the first coordinate. 
                 try{
                     for (int n = 1; n < length; n++){
-                        Coordinate coor = new Coordinate();
                         if (horizontal) {
                             // If horizontal, try to create a new cell to the right of the last created cell. 
-                            coor.setLocation(x + n, y);
+                            Coordinate coor = new Coordinate(x + n, y);
                             shipCoors.add(coor);
                         } else {
                             // If vertical, try to create a new cell to the top of the last created cell. 
-                            coor.setLocation(x, y + n);
+                            Coordinate coor = new Coordinate(x, y + n);
                             shipCoors.add(coor);
                         }
                     }
